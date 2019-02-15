@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <form>
+        Enter a word to define: <input type="text" id="mydict" value="">
+        <button id="dictbutton">Submit</button><br>Definition:
+        <span id="results"></span>
+    </form>
+    <script>
+        $("#dictbutton").click(function(event) {
+            event.preventDefault();
+            let url = "dictionary?q=" + $("#mydict").val();
+            let definition;
+            console.log(url);
+            $.getJSON(url, function(data) {
+                console.log(data);
+                definition = "<ul>";
+                $.each(data, function(i, item) {
+                    definition += "<li>" + data[i].defenition + "</li>";
+                })
+                definition += "</ul>";
+                $("#results").html(definition);
+            })
+        })
+    </script>
+</body>
+
+</html>

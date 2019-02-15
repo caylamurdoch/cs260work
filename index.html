@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="website.css">
+</head>
+
+<body>
+    <h1>CUTE ANIMALS</h1>
+
+    <ol>
+        <li><a href="kittens.html">kittens</a></li>
+        <li><a href="puppies.html">puppies</a></li>
+    </ol>
+
+    <p>What's your favorite animal?</p>
+
+    <form>
+        <input type="text" id="myform">
+        <button onclick="myFunction(event)">Click me</button>
+    </form>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction(event) {
+            let hello = 5;
+            hello = "howdy";
+            let array = [5, 7, 9, 11];
+            console.log(array);
+            array[1000] = 4;
+            for (let i = 0; i < array.length; i++) {
+                console.log(array[i]);
+            }
+            for (let item in array) {
+                console.log(item, array[item]);
+            }
+            let car = { type: "Fiat", model: "500", color: "white" };
+            for (let i in car) {
+                console.log(i, car[i]);
+            }
+            console.log(car.color);
+            console.log(hello);
+            document.getElementById("demo").innerHTML = "I love " + document.getElementById("myform").value + "s too!";
+            event.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

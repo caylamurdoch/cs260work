@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="avatar.js"></script>
+    <link rel="stylesheet" type="text/css" href="avatar.css">
+    <meta charset="utf-8">
+    <title>User Avatar Template</title>
+</head>
+
+<body>
+    <div ng-app='app' ng-controller='mainCtrl'>
+        <h1>My Family History List</h1>
+
+        <form name='userForm' ng-submit='addNew(userForm)'>
+            <input placeholder='Person' ng-model='userForm.person' />
+            <input placeholder='Father' ng-model='userForm.father' />
+            <input placeholder='Mother' ng-model='userForm.mother' />
+            <!--<input placeholder='Image Url' ng-model='userForm.url' />-->
+            <button type='submit'>Add New</button>
+        </form>
+
+
+        <!--<ul class='User-list'>-->
+        <!--<li ng-repeat='user in users'>-->
+        <!--    <div class='Avatar'>-->
+        <!--        <img ng-src='{{user.avatarUrl}}' />-->
+        <!--        <h4>{{user.name}}</h4>-->
+        <!--    </div>-->
+        <!--</li>-->
+        <!--    <li ng-repeat='user in users'>-->
+        <!--        <avatar user="user">-->
+        <!--    </li>-->
+        <!--</ul>-->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>xkcd api</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <h1>xkcd content</h1>
+    <div id="xkcdcontent"></div>
+</body>
+
+<script>
+    $.ajax({
+        url: "http://dynamic.xkcd.com/api-0/jsonp/comic?callback=?",
+        dataType: "jsonp",
+        jsonpCallback: "xkcddata",
+        success: function(data) {
+            console.log(data)
+            $("#xkcdcontent").append(
+                $("<h2/>").text(data.title),
+                $("<img/>").attr({
+                    src: data.img,
+                    title: data.alt,
+                    alt: data.title
+                })
+            );
+        }
+    });
+</script>
+
+</html>
